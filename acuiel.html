@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Accueil - Site de Rencontre</title>
+    <style>
+        body {
+            background-image: url('tof1.jpeg'); /* Chemin vers l'image */
+            background-size: cover; /* Couvre tout l'écran */
+            background-position: center; /* Centre l'image */
+            color: white; /* Texte en blanc pour contraster */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .image-container {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .image-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header class="bg-black bg-opacity-50 p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-4xl font-bold">Rencontres Magiques</h1>
+            <button id="menuToggle" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+            <nav id="navbar" class="hidden md:flex md:items-center md:space-x-4">
+                <a href="#" class="text-white hover:text-yellow-300 transition py-2">Accueil</a>
+               <!-- <a href="#" class="text-white hover:text-green-300 transition py-2">Profils</a>-->
+                <a href="#" class="text-white hover:text-red-300 transition py-2">Témoignage</a>
+                <a href="https://api.whatsapp.com/send?phone=237650817883" target="_blank" class="text-white hover:text-blue-300 transition py-2">Contact</a>
+                <a id="loginBtn" href="#" class="text-white hover:text-red-300 transition py-2">Connexion</a>
+            </nav>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden">
+            <nav class="flex flex-col space-y-2">
+               <a href="#" class="text-white hover:text-yellow-300 transition py-2">Accueil</a>
+                <a href="#" class="text-white hover:text-green-300 transition py-2">Profils</a>
+                <a href="#" class="text-white hover:text-red-300 transition py-2">Apropos</a>
+                <a href="#" class="text-white hover:text-red-300 transition py-2">Pays</a>
+                <a href="#" class="text-white hover:text-red-300 transition py-2">Témoignage</a>
+                <a href="https://api.whatsapp.com/send?phone=237650817883" target="_blank" class="text-white hover:text-blue-300 transition py-2">Contact</a>
+                <a id="loginBtnMobile" href="#" class="text-white hover:text-red-300 transition py-2">Connexion</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8">
+        <section class="text-center my-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Trouvez l'amour de votre vie</h2>
+            <p class="mb-8">Rejoignez notre communauté de célibataires et commencez votre aventure aujourd'hui !</p>
+            <button id="signupBtn" class="bg-blue-600 text-white py-2 px-4 rounded-lg text-lg hover:bg-blue-700 transition">Inscrivez-vous maintenant</button>
+            <div class="mt-4">
+                <a href="https://api.whatsapp.com/send?phone=237650817883" target="_blank" class="flex items-center justify-center bg-green-500 text-white w-12 h-12 rounded-full hover:bg-green-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3zm9 5a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8zm6-8a6 6 0 10-12 0 6 6 0 0012 0z" /></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg image-container">
+                <img src="vip.jpg" alt="Couple 1" class="w-full h-100 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4">Rencontrez des gens intéressants</h3>
+                <p class="text-gray-600">Explorez des profils de personnes partageant vos passions.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg image-container">
+                <img src="tof2.jpeg" alt="Couple 2" class="w-full h-100 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4">Discussions sécurisées</h3>
+                <p class="text-gray-600">Discutez en toute sécurité grâce à notre plateforme sécurisée.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg image-container">
+                <img src="tof1.jpeg" alt="Couple 3" class="w-full h-100 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4">Événements exclusifs</h3>
+                <p class="text-gray-600">Participez à des événements pour rencontrer d'autres célibataires.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content bg-white rounded-lg p-6 mx-auto mt-20 max-w-lg">
+            <span id="closeModal" class="cursor-pointer float-right text-gray-500">&times;</span>
+            <h2 class="text-xl font-bold mb-4 text-blue-600">Présentation Matrimoniale</h2>
+            <form id="signupForm">
+                <label class="block mb-2 text-blue-600">Nom:</label>
+                <input type="text" name="nom" class="border p-2 w-full text-blue-600" required>
+                
+                <label class="block mb-2 text-blue-600">Prénom:</label>
+                <input type="text" name="prenom" class="border p-2 w-full text-blue-600" required>
+
+                <label class="block mb-2 text-blue-600">Pays:</label>
+                <select name="pays" class="border p-2 w-full text-blue-600" required>
+                    <option value="">Sélectionnez</option>
+                    <option value="Allemagne">Allemagne</option>
+                    <option value="Belgique">Belgique</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Cameroun">Cameroun</option>
+                    <option value="France">France</option>
+                    <option value="Russie">Russie</option>
+                    <option value="Suisse">Suisse</option>
+                </select>
+                
+                <label class="block mb-2 text-blue-600">Ville:</label>
+                <input type="text" name="ville" class="border p-2 w-full text-blue-600" required>
+
+                <label class="block mb-2 text-blue-600">Âge:</label>
+                <input type="number" name="âge" class="border p-2 w-full text-blue-600" required>
+
+                <label class="block mb-2 text-blue-600">Taille:</label>
+                <input type="text" name="taille" class="border p-2 w-full text-blue-600" required>
+
+                <label class="block mb-2 text-blue-600">Poids:</label>
+                <input type="number" name="poids" class="border p-2 w-full text-blue-600" required>
+
+                <label class="block mb-2 text-blue-600">Profession:</label>
+                <input type="text" name="profession" class="border p-2 w-full text-blue-600" required>
+
+                <label class="block mb-2 text-blue-600">Nombre d'enfants:</label>
+                <input type="number" name="nombre_enfant" class="border p-2 w-full text-blue-600" required>
+                
+                <label class="block mb-2 text-blue-600">Religion:</label>
+                <input type="text" name="religion" class="border p-2 w-full text-blue-600" required>
+                
+                <label class="block mb-2 text-blue-600">Email:</label>
+                <input type="email" name="email" class="border p-2 w-full text-blue-600" required>
+                
+                <label class="block mb-2 text-blue-600">Sexe:</label>
+                <select name="sexe" class="border p-2 w-full text-blue-600" required>
+                    <option value="">Sélectionnez</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+                
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content bg-white rounded-lg p-6 mx-auto mt-20 max-w-lg">
+            <span id="closeLoginModal" class="cursor-pointer float-right text-gray-500">&times;</span>
+            <h2 class="text-xl font-bold mb-4 text-blue-600">Connexion Administrateur</h2>
+            <form id="loginForm">
+                <label class="block mb-2 text-blue-600">Email:</label>
+                <input type="email" name="email" class="border p-2 w-full text-blue-600" required>
+                
+                <label class="block mb-2 text-blue-600">Mot de passe:</label>
+                <input type="password" name="password" id="password" class="border p-2 w-full text-blue-600" required>
+                <button type="button" id="togglePassword" class="text-blue-600">Afficher</button>
+                
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-black bg-opacity-50 p-6">
+        <div class="container mx-auto flex justify-center">
+            <nav class="flex space-x-4">
+             <!--  <a href="#" class="text-white hover:text-yellow-300 transition">Accueil</a>-->
+                <a href="#" class="text-white hover:text-green-300 transition">Profils</a>
+                <a href="#" class="text-white hover:text-red-300 transition">Apropos</a>
+                <a href="#" class="text-white hover:text-red-300 transition">Pays</a>
+                <a href="#" class="text-white hover:text-red-300 transition">Témoignage</a>
+                <a href="https://api.whatsapp.com/send?phone=237650817883" target="_blank" class="text-white hover:text-blue-300 transition">Contact</a>
+                <a id="loginBtn" href="#" class="text-white hover:text-red-300 transition">Connexion</a>
+            </nav>
+        </div>
+        <div class="text-center text-white mt-4">
+            © 2025 Rencontres Magiques. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        const signupBtn = document.getElementById('signupBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        const signupModal = document.getElementById('signupModal');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.getElementById('closeModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        signupBtn.onclick = function() {
+            signupModal.style.display = "block";
+        }
+
+        loginBtn.onclick = function() {
+            loginModal.style.display = "block";
+        }
+
+        closeModal.onclick = function() {
+            signupModal.style.display = "none";
+        }
+
+        closeLoginModal.onclick = function() {
+            loginModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === signupModal) {
+                signupModal.style.display = "none";
+            }
+            if (event.target === loginModal) {
+                loginModal.style.display = "none";
+            }
+        }
+
+        document.getElementById('signupForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Inscription réussie !');
+            signupModal.style.display = "none";
+        }
+
+        document.getElementById('loginForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Connexion réussie !');
+            loginModal.style.display = "none";
+        }
+
+        togglePassword.onclick = function() {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                togglePassword.textContent = "Cacher";
+            } else {
+                passwordInput.type = "password";
+                togglePassword.textContent = "Afficher";
+            }
+        }
+
+        menuToggle.onclick = function() {
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
